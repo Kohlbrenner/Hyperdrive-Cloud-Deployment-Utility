@@ -1,0 +1,25 @@
+
+# Change log
+All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning] (http://semver.org/)
+
+
+## [0.2.0] - 2016-6-28
+### Changed
+- /etc/network/interfaces updated to use a static IP of 192.168.1.42
+- User manual updated with new changes as well as edited for basic spelling/grammar
+
+
+### Added
+- Created VirtualBox-compatible image with all prerequisite files preinstalled including the iso files for Xen and KVM.
+- Added support for IP->Hostname translation with avahi-daemon
+- Created a basic Bootstrap website for the Hyperdrive Project
+
+
+
+## [0.2.1] - 2016-7-18
+### Changed
+- The SSL certificate expired so I issued a new SSL certificate and recompiled the iPXE binary.
+- The iPXE binary was not recognizing the SSL certificate so I dug through the iPXE code and found that giving the nginx IP address as the “common name” field with allow it to pass.  Changes were reflected in the user manual.
+- wrote a “deployCloud” script that checks the status of each of the servers and then initiates the deployment process.  Along with the latest copy of the VM, this dramatically decreases necessary configuration time.
+- Identified a key networking issue where a router may block DHCP requests preventing it from working.  A warning was written in the “Troubleshooting Deployment” section of the user manual.
+- New sections were added to the user manual to resolve some of the ambiguities.  Older sections were edited to fix basic spelling and grammatical errors.
